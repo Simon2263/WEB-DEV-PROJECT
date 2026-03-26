@@ -1,0 +1,210 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convention Traveler - Home Page</title>
+
+<style>
+  /* Reset and basic styling */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    background: #f5f5f5; 
+    color: #333; 
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    position: relative;
+  }
+
+  nav a:hover { color: #ff6600; }
+
+  /* underline animation */
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ff6600;
+    transition: 0.3s;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  section { 
+    padding: 4rem 1rem; 
+    max-width: 1000px; 
+    margin: auto; 
+  }
+
+  h1, h2 { margin-bottom: 1rem; }
+
+  /* HERO */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    max-width: 900px;
+    margin: auto;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  /* Button */
+  .btn {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background: #ff6600;
+    color: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .btn:hover {
+    background: #e65c00;
+  }
+
+  /* Polaroid image */
+  .polaroid {
+    margin-top: 3rem;
+    display: inline-block;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    transform: rotate(-5deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .polaroid img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  /* Grid */
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .card {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      padding: 3rem 1rem;
+    }
+
+    .polaroid {
+      transform: rotate(-3deg);
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Convention Traveler</h1>
+  <nav>
+    <a href="../1_Page_One/index.html">Home</a>
+    <a href="../2_Page_Two/blog.html">Blog</a>
+    <a href="../3_Page_Three/gallery.html">Gallery</a>
+    <a href="../4_Page_Four/interview.html">Interviews</a>
+    <a href="../5_Page_Five/contacts.html#contacts">Contacts</a>
+  </nav>
+</header>
+
+<!-- HOME PAGE -->
+<section id="home" class="hero">
+  <h1>Travelling to Conventions, Festivals, and Expos.</h1>
+
+  <p>
+    That’s what my Website is all about. I explore and learn about those Events, Traditions, and Communities that bring people together through shared passions and interests.
+  </p>
+
+  <p>
+    From Gaming Conventions to Anime Expos, each Event tells a different but Wonderful Experience, Unforgettable Moments and Long Lasting Memories.
+  </p>
+
+  <p>
+    Throughout this site, I will share those Experiences, Interviews, and Memories I've captured along the way.
+  </p>
+
+  <div class="polaroid">
+    <img src="Profile.jpg" alt="WHY DOESN'T THIS WORK">
+  </div>
+</section>
+
+
+<footer>
+  <p>© 2026 Convention Explorer </p>
+</footer>
+
+</body>
+</html>

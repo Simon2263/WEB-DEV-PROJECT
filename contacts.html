@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convention Traveler - Contact Page</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    background: #f5f5f5; 
+    color: #333; 
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    position: relative;
+  }
+
+  nav a:hover { color: #ff6600; }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ff6600;
+    transition: 0.3s;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  section { 
+    padding: 4rem 1rem; 
+    max-width: 1000px; 
+    margin: auto; 
+  }
+
+  h1, h2 { margin-bottom: 1rem; }
+
+  .hero {
+    text-align: center;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    color: #666;
+  }
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact-box {
+    background: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+  }
+
+  .contact-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-box i {
+    font-size: 1.8rem;
+    color: #ff6600;
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+
+  footer p {
+    margin: 0.5rem 0;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      padding: 3rem 1rem;
+    }
+  }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Convention Traveler</h1>
+  <nav>
+    <a href="../1_Page_One/index.html">Home</a>
+    <a href="../2_Page_Two/blog.html">Blog</a>
+    <a href="../3_Page_Three/gallery.html">Gallery</a>
+    <a href="../4_Page_Four/interview.html">Interviews</a>
+    <a href="../5_Page_Five/contacts.html#contacts">Contacts</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Contact Me</h1>
+  <p>If you wanna reach out or know more, here are my contacts.</p>
+</section>
+
+<section class="contact" id="contacts">
+  <div class="contact-container">
+
+    <div class="contact-box">
+      <i class="fab fa-facebook"></i>
+      <h3>Facebook</h3>
+      <p><a href="https://facebook.com/" target="_blank">Simon Aligam</a></p>
+    </div>
+
+    <div class="contact-box">
+      <i class="fab fa-youtube"></i>
+      <h3>YouTube</h3>
+      <p><a href="https://youtube.com/" target="_blank">The Convention Traveler</a></p>
+    </div>
+
+    <div class="contact-box">
+      <i class="fas fa-phone"></i>
+      <h3>Phone</h3>
+      <p><a href="tel:09276764393">0927 676 4393</a></p>
+    </div>
+
+    <div class="contact-box">
+      <i class="fas fa-envelope"></i>
+      <h3>Email</h3>
+      <p><a href="mailto:SimonOGP@gmail.com">SimonOGP@gmail.com</a></p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Convention Traveler</p>
+</footer>
+</body>
+</html>

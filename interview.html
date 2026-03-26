@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convention Traveler - Interview Page</title>
+<style>
+  /* Reset and basic styling */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body { 
+    font-family: Arial, sans-serif; 
+    line-height: 1.6; 
+    background: #f5f5f5; 
+    color: #333; 
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    position: relative;
+  }
+
+  nav a:hover { color: #ff6600; }
+
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: #ff6600;
+    transition: 0.3s;
+  }
+
+  nav a:hover::after {
+    width: 100%;
+  }
+
+  main {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h1, h2 { margin-bottom: 1rem; }
+
+  h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem 0;
+    color: #1a1a1a;
+  }
+
+  /* Interviews grid */
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .polaroid {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+    transform: rotate(-2deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    text-align: center;
+  }
+
+  .polaroid img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .polaroid h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: #1a1a1a;
+  }
+
+  .polaroid p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  footer {
+    background: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .polaroid {
+      transform: rotate(-1deg);
+    }
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Convention Traveler</h1>
+  <nav>
+    <a href="../1_Page_One/index.html">Home</a>
+    <a href="../2_Page_Two/blog.html">Blog</a>
+    <a href="../3_Page_Three/gallery.html">Gallery</a>
+    <a href="../4_Page_Four/interview.html">Interviews</a>
+    <a href="../5_Page_Five/contacts.html#contacts">Contacts</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Cosplayer Interviews</h2>
+  <div class="grid">
+    <div class="polaroid">
+      <img src="cosplayer1.jpg" alt="Cosplayer 1">
+      <h3>Cosplayer 1</h3>
+      <p>Event, Date</p>
+      <p>Short Q&A highlight.</p>
+    </div>
+    <div class="polaroid">
+      <img src="cosplayer2.jpg" alt="Cosplayer 2">
+      <h3>Cosplayer 2</h3>
+      <p>Event, Date</p>
+      <p>Short Q&A highlight.</p>
+    </div>
+    <!-- Add more interviews here -->
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Convention Explorer</p>
+</footer>
+
+</body>
+</html>
