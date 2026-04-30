@@ -4,149 +4,146 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Convention Traveler - Blog Page</title>
+
 <style>
-  
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 
-  body { 
-    font-family: Arial, sans-serif; 
-    line-height: 1.6; 
-    background: #f5f5f5; 
-    color: #333; 
-  }
+body { 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  background: #f5f5f5; 
+  color: #333; 
+}
 
-  a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: inherit; }
 
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  position: relative;
+}
+
+nav a:hover { color: #f96b06; }
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff6600;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding: 4rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1, h2 { margin-bottom: 1rem; }
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #060200;
+}
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+article {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-height: 300px;
+}
+
+article h3 {
+  margin-bottom: 0.5rem;
+  color: #030100;
+}
+
+article p {
+  margin-bottom: 0.8rem;
+  color: #555;
+}
+
+.polaroid {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
+}
+
+footer {
+  background: #080300;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 600px) {
   header {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav {
-    display: flex;
-    gap: 2rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
 
-  nav a {
-    position: relative;
-  }
-
-  nav a:hover { color: #ff6600; }
-
-  nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #ff6600;
-    transition: 0.3s;
-  }
-
-  nav a:hover::after {
-    width: 100%;
-  }
-
-  main {
-    padding: 4rem 1rem;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  h1, h2 { margin-bottom: 1rem; }
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #1a1a1a;
-  }
-
-  article {
-    background: #fff;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-
-  article h3 {
-    margin-bottom: 0.5rem;
-    color: #ff6600;
-  }
-
-  article p {
-    margin-bottom: 0.8rem;
-    color: #555;
+  .grid {
+    grid-template-columns: 1fr;
   }
 
   .polaroid {
-    margin-top: 1.5rem;
-    display: inline-block;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 6px;
-    transform: rotate(-3deg);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transform: rotate(-1deg);
+    margin-bottom: 1rem;
   }
-
-  .polaroid img {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    border-radius: 4px;
-  }
-
-  footer {
-    background: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-
-  .btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    background: #ff6600;
-    color: #fff;
-    border-radius: 5px;
-    transition: 0.3s;
-  }
-
-  .btn:hover {
-    background: #e65c00;
-  }
-
-  
-  @media (max-width: 600px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    nav {
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .polaroid {
-      transform: rotate(-1deg);
-      margin-bottom: 1rem;
-    }
-  }
+}
 </style>
 </head>
 
 <body>
+
 <header>
   <h1>Convention Traveler</h1>
   <nav>
@@ -161,76 +158,72 @@
 <main>
   <h2>Blogged Events</h2>
 
-  <article>
-    <h3>Hobby Con 2026</h3>
-    <p>January 6 at Festival Mall, Alabang</p>
-    <div class="polaroid">
-      <img src="images/hobbycon.jpg" alt="Hobby Con Photos">
-    </div>
-  </article>
+  
+  <div class="grid">
 
-  <article>
-    <h3>Ozine Idol Fest 2026</h3>
-    <p>January 31 at SM North Edsa, Quezon City</p>
-    <div class="polaroid">
-      <img src="images/idolfest.jpg" alt="Ozine Idol Fest Photos">
-    </div>
-  </article>
+    <article>
+      <h3>Hobby Con 2026</h3>
+      <p>January 6 at Festival Mall, Alabang</p>
+      <div class="polaroid">
+        <img src="images/hobbycon.jpg" alt="Hobby Con Photos">
+      </div>
+    </article>
 
-  <article>
-    <h3>Otaku Expo 2026</h3>
-    <p>Febuary 7 at Ayala Malls Manila Bay, Paranaque</p>
-    <div class="polaroid">
-      <img src="images/otakuexpo.jpg" alt="Otaku Expo Photos">
-    </div>
-  </article>
+    <article>
+      <h3>Ozine Idol Fest 2026</h3>
+      <p>January 31 at SM North Edsa, Quezon City</p>
+      <div class="polaroid">
+        <img src="images/idolfest.jpg" alt="Ozine Idol Fest Photos">
+      </div>
+    </article>
 
-<article>
-    <h3>Cosplay Camp 2026</h3>
-    <p>Febuary 14-15 at Festival Mall, Alabang</p>
-    <div class="polaroid">
-      <img src="images/cosplaycamp.jpg" alt="Cosplay Camp Photos">
-    </div>
-  </article>
+    <article>
+      <h3>Otaku Expo 2026</h3>
+      <p>February 7 at Ayala Malls Manila Bay, Paranaque</p>
+      <div class="polaroid">
+        <img src="images/otakuexpo.jpg" alt="Otaku Expo Photos">
+      </div>
+    </article>
 
-  <article>
-    <h3>Mini Ozine Fest 2026</h3>
-    <p>Febuary 21-22 at SM North Edsa, Quezon City</p>
-    <div class="polaroid">
-      <img src="images/minifest.jpg" alt="Mini Ozine Festival Highlights">
-    </div>
-  </article>
+    <article>
+      <h3>Cosplay Camp 2026</h3>
+      <p>February 14-15 at Festival Mall, Alabang</p>
+      <div class="polaroid">
+        <img src="images/cosplaycamp.jpg" alt="Cosplay Camp Photos">
+      </div>
+    </article>
 
-  <article>
-    <h3>Anime Fair 2026</h3>
-    <p>Febuary 28 at Ayala Malls Feliz, Pasig City</p>
-    <div class="polaroid">
-      <img src="images/animefair.jpg" alt="Anime Fair Highlights">
-    </div>
-  </article>
+    <article>
+      <h3>Mini Ozine Fest 2026</h3>
+      <p>February 21-22 at SM North Edsa, Quezon City</p>
+      <div class="polaroid">
+        <img src="images/minifest.jpg" alt="Mini Ozine Festival Highlights">
+      </div>
+    </article>
 
-  <article>
-    <h3>SuperCon AniMania 2026</h3>
-    <p>March 15 at Evia Lifestyle Center</p>
-    <div class="polaroid">
-      <img src="images/supercon.jpg" alt="SuperCon AniMania Highlights">
-    </div>
-  </article>
+    <article>
+      <h3>Anime Fair 2026</h3>
+      <p>February 28 at Ayala Malls Feliz, Pasig City</p>
+      <div class="polaroid">
+        <img src="images/animefair.jpg" alt="Anime Fair Highlights">
+      </div>
+    </article>
 
+    <article>
+      <h3>SuperCon AniMania 2026</h3>
+      <p>March 15 at Evia Lifestyle Center</p>
+      <div class="polaroid">
+        <img src="images/supercon.jpg" alt="SuperCon AniMania Highlights">
+      </div>
+    </article>
 
-  </article>
-
-
+  </div>
 
 </main>
-
-
-
-
-
 
 <footer>
   <p>© 2026 Convention Explorer </p>
 </footer>
+
 </body>
 </html>

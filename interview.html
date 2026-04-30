@@ -4,131 +4,138 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Convention Traveler - Interview Page</title>
+
 <style>
-  
-  * { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
 
-  body { 
-    font-family: Arial, sans-serif; 
-    line-height: 1.6; 
-    background: #f5f5f5; 
-    color: #333; 
-  }
+body { 
+  font-family: Arial, sans-serif; 
+  line-height: 1.6; 
+  background: #f5f5f5; 
+  color: #333; 
+}
 
-  a { text-decoration: none; color: inherit; }
+a { text-decoration: none; color: inherit; }
 
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  position: relative;
+}
+
+nav a:hover { color: #ff6600; }
+
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff6600;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1, h2 { margin-bottom: 1rem; }
+
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+  color: #1a1a1a;
+}
+
+/* ✅ 2-COLUMN GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.polaroid {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 6px;
+  transform: rotate(-2deg);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+  min-height: 300px;
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.polaroid h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #1a1a1a;
+}
+
+.polaroid p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+footer {
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+/* ✅ MOBILE */
+@media (max-width: 600px) {
   header {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   nav {
-    display: flex;
-    gap: 2rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
 
-  nav a {
-    position: relative;
-  }
-
-  nav a:hover { color: #ff6600; }
-
-  nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: #ff6600;
-    transition: 0.3s;
-  }
-
-  nav a:hover::after {
-    width: 100%;
-  }
-
-  main {
-    padding: 4rem 1rem;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  h1, h2 { margin-bottom: 1rem; }
-
-  h2 {
-    font-size: 2rem;
-    margin: 2rem 0 1rem 0;
-    color: #1a1a1a;
-  }
-
-  
   .grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .polaroid {
-    background: #fff;
-    padding: 1rem;
-    border-radius: 6px;
-    transform: rotate(-2deg);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    text-align: center;
+    transform: rotate(-1deg);
   }
-
-  .polaroid img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-
-  .polaroid h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-    color: #1a1a1a;
-  }
-
-  .polaroid p {
-    font-size: 0.9rem;
-    color: #555;
-  }
-
-  footer {
-    background: #1a1a1a;
-    color: #fff;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 2rem;
-  }
-
-  @media (max-width: 600px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    nav {
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .polaroid {
-      transform: rotate(-1deg);
-    }
-  }
+}
 </style>
 </head>
 
 <body>
+
 <header>
   <h1>Convention Traveler</h1>
   <nav>
@@ -142,183 +149,64 @@
 
 <main>
   <h2>Cosplayer Interviews</h2>
+
   
   <div class="grid">
+
     <div class="polaroid">
-      <img src="cosplayer1.jpg" alt="Cosplayer 1">
-      <h3>Cosplayer 1</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-    
-    <div class="polaroid">
-      <img src="cosplayer2.jpg" alt="Cosplayer 2">
-      <h3>Cosplayer 2</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
+      <img src="interviewphotos/Ado.jpg" alt="Cosplayer 1">
+      <h3>Cosplayer 1: Ado</h3>
+      <p>Event: Hobby Con</p>
     </div>
 
     <div class="polaroid">
-      <img src="cosplayer3.jpg" alt="Cosplayer 3">
-      <h3>Cosplayer 3</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
+      <img src="interviewphotos/Franky.jpg" alt="Cosplayer 2">
+      <h3>Cosplayer 2: Franky</h3>
+      <p>Event: Hobby Con</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="interviewphotos/Blaster.jpg" alt="Cosplayer 3">
+      <h3>Cosplayer 3: Blaster</h3>
+      <p>Event: Ozine Idol Fest</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="interviewphotos/Shinobu.jpg" alt="Cosplayer 4">
+      <h3>Cosplayer 4: Shinobu Kochou</h3>
+      <p>Event: Ozine Idol Fest</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="interviewphotos/Yor.jpg" alt="Cosplayer 5">
+      <h3>Cosplayer 5: Yor Forger</h3>
+      <p>Event: Otaku Expo</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="interviewphotos/Mercenary.jpg" alt="Cosplayer 6">
+      <h3>Cosplayer 6: Mercenary of Shadow Company</h3>
+      <p>Event: Otaku Expo</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="interviewphotos/Bumblebee.jpg" alt="Cosplayer 7">
+      <h3>Cosplayer 7: Bumblebee</h3>
+      <p>Event: Mini Ozine Fest</p>
+    </div>
+
+    <div class="polaroid">
+      <img src="interviewphotos/Sakamoto.jpg" alt="Cosplayer 8">
+      <h3>Cosplayer 8: Taro Sakamoto</h3>
+      <p>Event: Mini Ozine Fest</p>
+    </div>
+
   </div>
 
-    <div class="polaroid">
-      <img src="cosplayer4.jpg" alt="Cosplayer 4">
-      <h3>Cosplayer 4</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-  <div class="polaroid">
-      <img src="cosplayer5.jpg" alt="Cosplayer 5">
-      <h3>Cosplayer 5</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-  </div>
-
-    <div class="polaroid">
-      <img src="cosplayer6.jpg" alt="Cosplayer 6">
-      <h3>Cosplayer 6</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer7.jpg" alt="Cosplayer 7">
-      <h3>Cosplayer 7</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-    
-    <div class="polaroid">
-      <img src="cosplayer8.jpg" alt="Cosplayer 8">
-      <h3>Cosplayer 8</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer9.jpg" alt="Cosplayer 9">
-      <h3>Cosplayer 9</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-  </div>
-
-    <div class="polaroid">
-      <img src="cosplayer10.jpg" alt="Cosplayer 10">
-      <h3>Cosplayer 10</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer11.jpg" alt="Cosplayer 11">
-      <h3>Cosplayer 11</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer12.jpg" alt="Cosplayer 12">
-      <h3>Cosplayer 12</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer13.jpg" alt="Cosplayer 13">
-      <h3>Cosplayer 13</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-    
-    <div class="polaroid">
-      <img src="cosplayer14.jpg" alt="Cosplayer 14">
-      <h3>Cosplayer 14</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer15.jpg" alt="Cosplayer 15">
-      <h3>Cosplayer 15</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-  </div>
-
-    <div class="polaroid">
-      <img src="cosplayer16.jpg" alt="Cosplayer 16">
-      <h3>Cosplayer 16</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-  <div class="polaroid">
-      <img src="cosplayer17.jpg" alt="Cosplayer 17">
-      <h3>Cosplayer 17</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-  </div>
-
-    <div class="polaroid">
-      <img src="cosplayer18.jpg" alt="Cosplayer 18">
-      <h3>Cosplayer 18</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer19.jpg" alt="Cosplayer 19">
-      <h3>Cosplayer 19</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-    
-    <div class="polaroid">
-      <img src="cosplayer20.jpg" alt="Cosplayer 20">
-      <h3>Cosplayer 20</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer21.jpg" alt="Cosplayer 21">
-      <h3>Cosplayer 21</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-  </div>
-
-    <div class="polaroid">
-      <img src="cosplayer22.jpg" alt="Cosplayer 22">
-      <h3>Cosplayer 22</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer23.jpg" alt="Cosplayer 23">
-      <h3>Cosplayer 23</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-    <div class="polaroid">
-      <img src="cosplayer24.jpg" alt="Cosplayer 24">
-      <h3>Cosplayer 24</h3>
-      <p>Date and the Event</p>
-      <p>Questions Asked</p>
-    </div>
-
-
-
-  </div>
 </main>
 
 <footer>
-  <p>© 2026 Convention Explorer</p>
+  <p>© 2026 Convention Explorer </p>
 </footer>
 
 </body>
